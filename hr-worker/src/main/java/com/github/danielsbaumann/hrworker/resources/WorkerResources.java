@@ -18,7 +18,7 @@ import java.util.List;
 @RequestMapping(value = "/workers")
 public class WorkerResources {
 
-    private static Logger log = LoggerFactory.getLogger(WorkerResources.class);
+    private static final Logger log = LoggerFactory.getLogger(WorkerResources.class);
 
     @Autowired
     private Environment env;
@@ -37,9 +37,7 @@ public class WorkerResources {
 
         log.info("PORT = " + env.getProperty("local.server.port"));
 
-        Worker worker = repository
-                .findById(id)
-                .get();
+        Worker worker = repository.findById(id).get();
         return ResponseEntity.ok(worker);
     }
 }
