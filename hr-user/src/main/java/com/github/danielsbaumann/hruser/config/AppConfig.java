@@ -10,6 +10,4 @@ public class AppConfig {
     public BCryptPasswordEncoder bCrypt() {
         return new BCryptPasswordEncoder();
     }
-
-    ;
 }
